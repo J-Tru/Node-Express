@@ -5,7 +5,7 @@ const partnerRouter = express.Router();
 
 partnerRouter.use(bodyParser.json());
 
-partnerRouter.route('/partners')
+partnerRouter.route('/')
     .all((req, res, next) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
@@ -25,7 +25,7 @@ partnerRouter.route('/partners')
         res.end('Deleting all partners');
     });
 
-partnerRouter.route('/partners/:partnerId')
+partnerRouter.route('/:partnersId')
     .all((req, res, next) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
@@ -44,5 +44,7 @@ partnerRouter.route('/partners/:partnerId')
     .delete((req, res) => {
         res.end('Deleting all partners');
     });
+
+
 
 module.exports = partnerRouter;
